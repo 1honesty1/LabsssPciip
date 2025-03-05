@@ -1,0 +1,58 @@
+.main__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 40px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.name {
+  margin-left: 60px;
+  margin-top: -20px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  margin-right: 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+a :hover {
+  cursor: pointer;
+}
+
+.main__header .navigation {
+  font-weight: 700;
+  font-size: 28px;
+  margin-top: 25px;
+  margin-right: 40px;
+}
+
+.skills h2 {
+  text-decoration: underline;
+}
+
+.main__flex {
+  background: url("../img/1.jpg") 615px 5px/150px no-repeat;
+}
+
+.main .main__information {
+  color: blueviolet;
+  font-style: italic;
+}
+
+.main .main__language {
+  position: relative;
+  background: url("../img/html.png") 95px 0px/20px no-repeat;
+}
+.main .main__language::after {
+  position: absolute;
+  content: "";
+  bottom: -2px;
+  left: 85px;
+  width: 1px;
+  height: 20px;
+  background-color: #707070;
+}

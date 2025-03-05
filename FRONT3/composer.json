@@ -1,0 +1,11 @@
+{
+	"require": {
+		"laravel/framework": "*",
+		"illuminate/mail": "*"
+	},
+	"config": {
+		"allow-plugins": {
+			"kylekatarnls/update-helper": true
+		}
+	}
+}

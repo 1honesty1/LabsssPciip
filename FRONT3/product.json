@@ -1,0 +1,62 @@
+[
+	{
+		"id": 1,
+		"name": "Свинина",
+		"description": "Оптово-розничная торговля",
+		"image": "../img/products/meat.jpg"
+	},
+	{
+		"id": 2,
+		"name": "Соки прямого отжима",
+		"description": "Оптово-розничная торговля",
+		"image": "../img/products/juice.jpg"
+	},
+	{
+		"id": 3,
+		"name": "Колбасные изделия",
+		"description": "Оптово-розничная торговля",
+		"image": "../img/products/sausage.jpg"
+	},
+	{
+		"id": 4,
+		"name": "Овощи",
+		"description": "Оптово-розничная торговля",
+		"image": "../img/products/vegetables.jpg"
+	},
+	{
+		"id": 5,
+		"name": "Молоко",
+		"description": "Оптово-розничная торговля",
+		"image": "../img/products/sausage.jpg"
+	},
+	{
+		"id": 6,
+		"name": "Яйца",
+		"description": "Оптово-розничная торговля",
+		"image": "../img/products/meat.jpg"
+	},
+	{
+		"id": 7,
+		"name": "Мясные деликатесы",
+		"description": "Оптово-розничная торговля",
+		"image": "../img/products/juice.jpg"
+	},
+	{
+		"id": 8,
+		"name": "Фрукты",
+		"description": "Оптово-розничная торговля",
+		"image": "../img/products/vegetables.jpg"
+	},
+	{
+		"id": 9,
+		"name": "Рыба",
+		"description": "Оптово-розничная торговля",
+		"image": "../img/products/meat.jpg"
+	},
+	{
+		"id": 10,
+		"name": "Орехи",
+		"description": "Оптово-розничная торговля",
+		"image": "../img/products/meat.jpg"
+	}
+]

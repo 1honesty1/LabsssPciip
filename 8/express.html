@@ -1,0 +1,51 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="express.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div class="wrap">
+            <div class="text_main">
+                <h1>Экспресс заказ</h1>
+                <button><a href="index.html"><img src="img/krestik.png" alt=""></a></button>
+            </div>
+            <div class="inform">
+                <div class="inputs">
+                    <input class="name" type="text" placeholder="Ваше имя">
+                    <input class="number" type="tel" placeholder="Ваш номер телефона" maxlength="13"
+                    pattern="+375 [0-9]{2}-[0-9] {3}-[0-9] {2}-[0-9] {2}">
+                </div>
+
+                <div class="size">
+                    <h3>Размер</h3>
+                    <select name="size" id="">
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                        <option value="3XL">3XL</option>
+                    </select>
+                </div>
+
+                <div class="dostavka">
+                    <h3>Доставка</h3>
+                    <select name="dostavka" id="">
+                        <option value="1">Самовывоз</option>
+                        <option value="2">Штатный курьер</option>
+                        <option value="3">Срочная курьерская доставка</option>
+                    </select>
+                </div>
+                
+                <div class="adres">
+                    <h3>Адрес доставки и дополнительная информация</h3>
+                    <textarea name="adres" id=""></textarea>
+                    <button>Заказать</button>
+                </div>
+            </div>
+    </div>
+    </main>
+    
+</body>
+</html>

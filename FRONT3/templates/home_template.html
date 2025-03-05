@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ПК имени В.И.Кремко</title>
+		<link rel="stylesheet" href="../css/home.css" />
+	</head>
+	<body>
+		<header>
+			<nav class="navbar">
+				<a href="home.php" class="logo">Dispatcher Kremko</a>
+				<div class="nav-links">
+					<?php if ($user['role'] === 'dispatcher'): ?>
+					<a href="workers.php">Статус работников</a>
+					<a href="add_task.php">Добавить задачу</a>
+					<a href="admin.php">Админ панель</a>
+					<span class="user-email"
+						><?php echo htmlspecialchars($user['email']); ?></span
+					>
+					<?php else: ?>
+					<a href="tasks.php">Просмотр задач</a>
+					<span class="user-email"
+						><?php echo htmlspecialchars($user['email']); ?></span
+					>
+					<?php endif; ?>
+					<a href="logout.php" class="logout-btn">Выйти</a>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<section class="welcome-section">
+				<h1>Добро пожаловать в ПК имени В.И.Кремко</h1>
+				<p class="description">
+					Крупное динамично развивающееся аграрное предприятие с многолетней
+					историей, занимающее лидирующие позиции в производстве и переработке
+					сельскохозяйственной продукции в Республике Беларусь.
+				</p>
+			</section>
+
+			<div
+				id="drop-area"
+				style="border: 2px dashed #ccc; padding: 20px; text-align: center"
+			>
+				Перетащите файлы сюда
+			</div>
+
+			<section class="products-section">
+				<h2>Наша продукция</h2>
+				<p class="products-description">
+					Вся наша продукция произведена на современном оборудовании, обладает
+					высоким качеством, изготовлена из натуральных ингредиентов.
+				</p>
+				<div class="products-grid"></div>
+			</section>
+
+			<section class="stats-section">
+				<div class="stat-item">
+					<h3>9426</h3>
+					<p>ГА площадей</p>
+				</div>
+				<div class="stat-item">
+					<h3>34000</h3>
+					<p>поголовья свиней</p>
+				</div>
+				<div class="stat-item">
+					<h3>8500</h3>
+					<p>поголовья КРС</p>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<div class="footer-content">
+				<div class="contact-info">
+					<p>231705, Республика Беларусь</p>
+					<p>Гродненская область, Гродненский район</p>
+					<p>агрогородок Квасовка</p>
+					<p>Тел: +375 (152) 47-66-40</p>
+				</div>
+			</div>
+			<div class="copyright">
+				<p>© Производственный кооператив имени В.И.КРЕМКО</p>
+			</div>
+		</footer>
+		<script>
+			// Сохранение данных о продукте в куки
+			function saveProductToCookies(product) {
+				document.cookie = `product_name=${product.name}; max-age=${
+					86400 * 30
+				}; path=/` // 30 дней
+				document.cookie = `product_description=${
+					product.description
+				}; max-age=${86400 * 30}; path=/` // 30 дней
+			}
+
+			// Загрузка данных из product.json
+			fetch('../product.json')
+				.then(response => response.json())
+				.then(products => {
+					const productsGrid = document.querySelector('.products-grid')
+					products.forEach(product => {
+						const productCard = document.createElement('div')
+						productCard.classList.add('product-card')
+						productCard.innerHTML = `
+                <img src="${product.image}" alt="${product.name}" class="product-image" />
+                <div class="product-info">
+                    <h3>${product.name}</h3>
+                    <p>${product.description}</p>
+                    <button class="add-to-cookies-btn">Добавить в куки</button>
+                </div>
+            `
+						// Добавляем обработчик клика для кнопки
+						const button = productCard.querySelector('.add-to-cookies-btn')
+						button.addEventListener('click', event => {
+							event.stopPropagation() // Предотвращаем срабатывание события клика на карточке
+							saveProductToCookies(product)
+							alert(`${product.name} добавлен в куки!`)
+						})
+						productsGrid.appendChild(productCard)
+					})
+				})
+				.catch(error => console.error('Ошибка загрузки данных:', error))
+		</script>
+	</body>
+</html>

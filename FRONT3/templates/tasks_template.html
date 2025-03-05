@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Просмотр задач - ПК имени В.И.Кремко</title>
+		<link rel="stylesheet" href="../css/home.css" />
+		<link rel="stylesheet" href="../css/tasks.css" />
+	</head>
+	<body>
+		<header>
+			<nav class="navbar">
+				<a href="home.php" class="logo">Dispatcher Kremko</a>
+				<div class="nav-links">
+					<a href="tasks.php">Просмотр задач</a>
+					<span class="user-email"
+						><?php echo htmlspecialchars($user['email']); ?></span
+					>
+					<a href="logout.php" class="logout-btn">Выйти</a>
+				</div>
+			</nav>
+		</header>
+		<main class="tasks-container">
+			<h1>Просмотр задач</h1>
+			<div class="tasks-list">
+				<?php foreach ($tasks as $task): ?>
+					<div class="task-item">
+						<h3><?php echo htmlspecialchars($task['title']); ?></h3>
+						<p class="task-info">От диспетчера: <?php echo htmlspecialchars($task['dispatcher_name'] . ' ' . $task['dispatcher_surname']); ?></p>
+						<form method="POST" class="status-form">
+							<input type="hidden" name="task_id" value="<?php echo $task['id']; ?>">
+							<select name="status_id" onchange="this.form.submit()">
+								<?php foreach ($statuses as $status): ?>
+									<option value="<?php echo $status['id']; ?>" 
+											<?php echo ($status['id'] == $task['status_id']) ? 'selected' : ''; ?>>
+										<?php echo htmlspecialchars($status['name']); ?>
+									</option>
+								<?php endforeach; ?>
+							</select>
+						</form>
+					</div>
+				<?php endforeach; ?>
+				<?php if (empty($tasks)): ?>
+					<p class="no-tasks">У вас пока нет задач</p>
+				<?php endif; ?>
+			</div>
+		</main>
+		<footer>
+			<div class="footer-content">
+				<div class="contact-info">
+					<p>231705, Республика Беларусь</p>
+					<p>Гродненская область, Гродненский район</p>
+					<p>агрогородок Квасовка</p>
+					<p>Тел: +375 (152) 47-66-40</p>
+				</div>
+			</div>
+			<div class="copyright">
+				<p>© Производственный кооператив имени В.И.КРЕМКО</p>
+			</div>
+		</footer>
+	</body>
+</html>

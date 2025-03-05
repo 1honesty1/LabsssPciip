@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Редактировать задачу</title>
+		<link rel="stylesheet" href="../css/home.css" />
+		<link rel="stylesheet" href="../css/edit_task.css" />
+		<script src="../js/validation.js" defer></script>
+	</head>
+	<body>
+		<header>
+			<nav class="navbar">
+				<a href="home.php" class="logo">Dispatcher Kremko</a>
+				<div class="nav-links">
+					<a href="workers.php">Статус работников</a>
+					<a href="add_task.php">Добавить задачу</a>
+					<a href="admin.php">Админ панель</a>
+					<span class="user-email">{{user_email}}</span>
+					<a href="logout.php" class="logout-btn">Выйти</a>
+				</div>
+			</nav>
+		</header>
+		<main class="admin-container">
+			<h1>Редактировать задачу</h1>
+			<form method="POST">
+				<input type="hidden" name="task_id" value="{{task_id}}" />
+				<div>
+					<label for="task_title">Название задачи:</label>
+					<textarea id="task_title" name="task_title" required rows="4">
+{{task_title}}</textarea
+					>
+				</div>
+				<button type="submit" class="btn">Сохранить изменения</button>
+			</form>
+		</main>
+		<footer>
+			<div class="footer-content">
+				<div class="contact-info">
+					<p>231705, Республика Беларусь</p>
+					<p>Гродненская область, Гродненский район</p>
+					<p>агрогородок Квасовка</p>
+					<p>Тел: +375 (152) 47-66-40</p>
+				</div>
+			</div>
+			<div class="copyright">
+				<p>© Производственный кооператив имени В.И.КРЕМКО</p>
+			</div>
+		</footer>
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				const textarea = document.querySelector('textarea')
+
+				textarea.addEventListener('input', function () {
+					this.style.height = 'auto'
+					this.style.height = this.scrollHeight + 'px'
+				})
+			})
+		</script>
+	</body>
+</html>

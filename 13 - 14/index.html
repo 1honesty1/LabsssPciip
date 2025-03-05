@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JavaScript</title>
+		<script>
+			// 1. Работа с объектом Date
+			function showCurrentTime() {
+				let now = new Date()
+				let hours = now.getHours()
+				let minutes = now.getMinutes()
+				minutes = minutes < 10 ? '0' + minutes : minutes // добавляем ведущий ноль, если минуты < 10
+				let currentTime = hours + ':' + minutes
+				alert('Текущее время: ' + currentTime)
+			}
+
+			// 2. Работа с циклами и операторами
+			function displayBodyParts() {
+				let bodyParts = ['Шапский', 'Алексей', '25 Вариант']
+				let i = 0
+				let output = ''
+				while (i < bodyParts.length) {
+					output += 'О себе: ' + bodyParts[i] + '<br>'
+					i++
+				}
+				document.getElementById('bodyPartsOutput').innerHTML = output
+			}
+
+			// 3. Работа с текстовым массивом
+			function processArray() {
+				let numbers = [2, -3, 5, -7, 9, -11]
+				let productOfNegatives = 1
+				let hasNegatives = false
+				let originalArray = numbers.slice() // Копируем массив для вывода исходного
+
+				// Подсчитываем произведение отрицательных элементов
+				for (let i = 0; i < numbers.length; i++) {
+					if (numbers[i] < 0) {
+						productOfNegatives *= numbers[i]
+						hasNegatives = true
+					}
+				}
+
+				// Если в массиве нет отрицательных чисел
+				if (!hasNegatives) {
+					productOfNegatives = 0
+				}
+
+				numbers.reverse() // Переворачиваем массив
+
+				document.getElementById('originalArray').innerText =
+					'Исходный массив: ' + originalArray.join(', ')
+				document.getElementById('reversedArray').innerText =
+					'Перевернутый массив: ' + numbers.join(', ')
+				document.getElementById('productOfNegatives').innerText =
+					'Произведение отрицательных элементов: ' + productOfNegatives
+			}
+
+			// 5. Работа со строками
+			function processStrings() {
+				let S1 = 'Я люблю Беларусь'
+				let S2 = 'Я учусь в Политическом колледже'
+
+				// 1. Длина строки S1
+				let lengthS1 = S1.length
+				document.getElementById('lengthS1').innerText =
+					'Длина строки S1: ' + lengthS1
+
+				// 2. Выделение n-го символа в строках S1 и S2 (например, 3-й символ)
+				let n = 3
+				let nthCharS1 = S1.charAt(n - 1)
+				let nthCharS2 = S2.charAt(n - 1)
+				document.getElementById('nthCharS1').innerText =
+					'n-й символ в строке S1: ' + nthCharS1
+				document.getElementById('nthCharS2').innerText =
+					'n-й символ в строке S2: ' + nthCharS2
+
+				// 3. Зафиксировать все, что находится на "н" в строке S1
+				let fixedS1 = S1.replace(/н/g, 'n')
+				document.getElementById('fixedS1').innerText =
+					'Измененная строка S1: ' + fixedS1
+			}
+		</script>
+	</head>
+	<body>
+		<h1>JavaScript</h1>
+		<!-- Задание 1 -->
+		<h2>1. Работа с объектом Date</h2>
+		<button onclick="showCurrentTime()">Показать текущее время</button>
+
+		<!-- Задание 2 -->
+		<h2>2. Работа с циклами и операторами</h2>
+		<button onclick="displayBodyParts()">О себе</button>
+		<div id="bodyPartsOutput"></div>
+
+		<!-- Задание 3 -->
+		<h2>3. Работа с текстовым массивом</h2>
+		<button onclick="processArray()">Обработать массив</button>
+		<p id="originalArray"></p>
+		<p id="reversedArray"></p>
+		<p id="productOfNegatives"></p>
+
+		<!-- Задание 4 -->
+		<h2>4. Работа с предметом Математика</h2>
+		<button onclick="calculateVolume()">Вычислить объем шара</button>
+		<p id="sphereVolume"></p>
+
+		<!-- Задание 5 -->
+		<h2>5. Работа со строками</h2>
+		<button onclick="processStrings()">Обработать строки</button>
+		<p id="lengthS1"></p>
+		<p id="nthCharS1"></p>
+		<p id="nthCharS2"></p>
+		<p id="fixedS1"></p>
+		<script src="/js/script1.js"></script>
+	</body>
+</html>

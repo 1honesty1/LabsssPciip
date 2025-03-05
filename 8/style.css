@@ -1,0 +1,206 @@
+body {
+	margin: 30px;
+	background-color: white;
+	border: 1px solid whitesmoke;
+}
+
+.wrap {
+	display: grid;
+	grid-template-columns: 45% 10% 45%;
+	background-color: white;
+	border: 1px solid whitesmoke;
+	padding-bottom: 40px;
+}
+
+.text_main {
+	margin-left: 10px;
+}
+
+h1 {
+	font-size: 35px;
+	letter-spacing: 1px;
+}
+
+h4 {
+	font-size: 15px;
+	font-weight: lighter;
+}
+
+.imges .fir {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.imges h4 {
+	background-color: orange;
+	border: 7px solid orange;
+	border-radius: 0 10px 10px 0;
+}
+
+.imges .fir img {
+	width: 20px;
+	height: 20px;
+}
+
+.imges .sec {
+	display: flex;
+	justify-content: center;
+}
+
+.imges .sec img {
+	width: 70%;
+}
+
+.gallery {
+	display: flex;
+	flex-direction: row;
+	margin-top: 40px;
+	margin-left: 70px;
+}
+
+.gallery img {
+	width: 90px;
+	margin-left: 10px;
+}
+
+.gallery .img_1 {
+	border: 10px solid red;
+}
+
+.infos {
+	display: flex;
+	flex-direction: column;
+}
+
+.stars img {
+	width: 20px;
+}
+.correct img {
+	width: 20px;
+	height: 20px;
+}
+
+.infos .first {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+.correct {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-right: 10px;
+}
+
+.second {
+	margin-top: 50px;
+}
+
+.tovar {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: start;
+}
+
+.price h3 {
+	font-size: 30px;
+	color: red;
+	margin: 0;
+	font-weight: bolder;
+}
+
+.price h5 {
+	margin-top: 2px;
+	font-size: 20px;
+	color: gray;
+	text-decoration: 1.5px line-through;
+}
+
+.value {
+	width: 130px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	border: 1px solid gray;
+	align-items: center;
+}
+
+#counter-value {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#increment-btn,
+#decrement-btn {
+	margin: 20px;
+	height: 100%;
+	padding: 0 17px;
+	border: none;
+}
+
+button {
+	width: 150px;
+	height: 40px;
+	border: 1px solid rgb(218, 27, 27);
+}
+
+.btn_buy {
+	display: flex;
+	flex-direction: column;
+	margin-right: 10px;
+}
+.btn_buy .btn1 {
+	background-color: rgb(218, 27, 27);
+	color: white;
+}
+
+.btn_buy .btn1:hover {
+	background-color: white;
+	color: rgb(218, 27, 27);
+}
+
+.btn_buy .btn2 {
+	margin-top: 20px;
+	color: rgb(218, 27, 27);
+	background-color: white;
+}
+.btn2:hover {
+	background-color: rgb(218, 27, 27);
+	color: white;
+	border: 2px solid black;
+}
+
+.dostavka {
+	margin-top: 50px;
+}
+.dostavka button {
+	color: rgb(218, 27, 27);
+	background-color: white;
+	margin-bottom: 25px;
+}
+
+.dostavka .one_img {
+	width: 15px;
+	background-color: rgb(218, 27, 27);
+	border-radius: 50%;
+}
+
+.dostavka img {
+	width: 20px;
+	margin-right: 5px;
+}
+
+.dostavka p {
+	display: flex;
+	align-items: center;
+	margin: 0 0 1px;
+	color: gray;
+}
+
+.dostavka p:last-child {
+	color: rgb(218, 27, 27);
+}

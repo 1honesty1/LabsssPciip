@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Интерфейсные события</title>
+		<link rel="stylesheet" href="../17/css/style.css" />
+	</head>
+	<body>
+		<nav id="navbar">
+			<div class="burger">☰</div>
+			<ul>
+				<li onclick="showSection('home')">Главная</li>
+				<li onclick="showSection('mouse-events')">События мыши</li>
+				<li onclick="showSection('keyboard-events')">События клавиатуры</li>
+				<li onclick="showSection('drag-drop')">Drag & Drop</li>
+				<li onclick="showSection('pointer-events')">События указателя</li>
+				<li onclick="showSection('scroll-events')">События прокрутки</li>
+				<li onclick="showSection('touch-events')">События сенсорных экранов</li>
+				<li onclick="showSection('timer-events')">События таймеров</li>
+			</ul>
+		</nav>
+
+		<section id="home">
+			<h1>Добро пожаловать!</h1>
+			<p>Выберите вкладку, чтобы увидеть примеры интерфейсных событий.</p>
+		</section>
+
+		<section id="mouse-events">
+			<h2>События мыши</h2>
+			<div id="box">Наведите на меня или кликните</div>
+		</section>
+
+		<section id="keyboard-events">
+			<h2>События клавиатуры</h2>
+			<input type="text" id="textInput" placeholder="Введите текст..." />
+			<div id="output"></div>
+		</section>
+
+		<section id="drag-drop">
+			<h2>Drag & Drop события</h2>
+			<div id="draggable" draggable="true">Перетащи меня</div>
+			<div id="dropzone">Сбросьте сюда</div>
+		</section>
+
+		<section id="pointer-events">
+			<h2>События указателя</h2>
+			<div id="pointerArea">Нажмите или коснитесь здесь</div>
+		</section>
+
+		<section id="scroll-events">
+			<h2>События полосы прокрутки</h2>
+			<p>Прокрутите вниз!</p>
+		</section>
+
+		<section id="touch-events">
+			<h2>События сенсорных экранов</h2>
+			<div id="touchArea">Коснитесь меня</div>
+		</section>
+
+		<section id="timer-events">
+			<h2>События, связанные с таймером</h2>
+			<div id="timerOutput">Таймер: 0</div>
+		</section>
+
+		<script src="../js/script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Пользовательская форма</title>
+		<link rel="stylesheet" href="../18/css/style.css" />
+	</head>
+	<body>
+		<h1>Пользовательская форма</h1>
+		<form id="userForm">
+			<label for="name">Имя:</label>
+			<input
+				type="text"
+				id="name"
+				required
+				pattern="[A-Za-zА-Яа-яЁё]{1,20}"
+				title="Имя должно содержать только буквы и быть длиной до 20 символов."
+			/><br />
+
+			<label for="email">Электронная почта:</label>
+			<input
+				type="email"
+				id="email"
+				required
+				title="Введите корректный адрес электронной почты."
+			/><br />
+
+			<label for="phone">Телефон:</label>
+			<input
+				type="tel"
+				id="phone"
+				required
+				pattern="\+?[0-9]{1,15}"
+				title="Введите номер телефона, начинающийся с + и состоящий из 1-15 цифр."
+			/><br />
+
+			<label for="agreement">Согласен с условиями:</label>
+			<input type="checkbox" id="agreement" required /><br />
+
+			<label>Пол:</label>
+			<input type="radio" name="gender" value="male" required /> Мужчина
+			<input type="radio" name="gender" value="female" /> Женщина<br />
+
+			<label for="country">Страна:</label>
+			<select id="country">
+				<option value="by">Беларусь</option>
+				<option value="ru">Россия</option>
+				<option value="us">США</option>
+				<option value="uk">Великобритания</option></select
+			><br />
+
+			<button type="submit">Отправить</button>
+		</form>
+
+		<script src="js/script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ПК имени В.И.Кремко</title>
+		<link rel="stylesheet" href="../css/home.css" />
+	</head>
+	<body>
+		<header>
+			<nav class="navbar">
+				<a href="home.php" class="logo">Dispatcher Kremko</a>
+				<div class="nav-links">
+					<?php if ($user['role'] === 'dispatcher'): ?>
+					<a href="workers.php">Статус работников</a>
+					<a href="add_task.php">Добавить задачу</a>
+					<a href="admin.php">Админ панель</a>
+					<span class="user-email"
+						><?php echo htmlspecialchars($user['email']); ?></span
+					>
+					<?php else: ?>
+					<a href="tasks.php">Просмотр задач</a>
+					<span class="user-email"
+						><?php echo htmlspecialchars($user['email']); ?></span
+					>
+					<?php endif; ?>
+					<a href="logout.php" class="logout-btn">Выйти</a>
+				</div>
+			</nav>
+		</header>
+		<main>
+			<section class="welcome-section">
+				<h1>Добро пожаловать в ПК имени В.И.Кремко</h1>
+				<p class="description">
+					Крупное динамично развивающееся аграрное предприятие с многолетней
+					историей, занимающее лидирующие позиции в производстве и переработке
+					сельскохозяйственной продукции в Республике Беларусь.
+				</p>
+			</section>
+
+			<section class="products-section">
+				<h2>Наша продукция</h2>
+				<p class="products-description">
+					Вся наша продукция произведена на современном оборудовании, обладает
+					высоким качеством, изготовлена из натуральных ингредиентов.
+				</p>
+				<div class="products-grid">
+					<div class="product-card">
+						<img
+							src="../img/products/meat.jpg"
+							alt="Свинина"
+							class="product-image"
+						/>
+						<div class="product-info">
+							<h3>Свинина</h3>
+							<p>Оптово-розничная торговля</p>
+						</div>
+					</div>
+					<div class="product-card">
+						<img
+							src="../img/products/juice.jpg"
+							alt="Соки"
+							class="product-image"
+						/>
+						<div class="product-info">
+							<h3>Соки прямого отжима</h3>
+							<p>Оптово-розничная торговля</p>
+						</div>
+					</div>
+					<div class="product-card">
+						<img
+							src="../img/products/sausage.jpg"
+							alt="Колбасные изделия"
+							class="product-image"
+						/>
+						<div class="product-info">
+							<h3>Колбасные изделия</h3>
+							<p>Оптово-розничная торговля</p>
+						</div>
+					</div>
+					<div class="product-card">
+						<img
+							src="../img/products/vegetables.jpg"
+							alt="Овощи"
+							class="product-image"
+						/>
+						<div class="product-info">
+							<h3>Овощи</h3>
+							<p>Оптово-розничная торговля</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="stats-section">
+				<div class="stat-item">
+					<h3>9426</h3>
+					<p>ГА площадей</p>
+				</div>
+				<div class="stat-item">
+					<h3>34000</h3>
+					<p>поголовья свиней</p>
+				</div>
+				<div class="stat-item">
+					<h3>8500</h3>
+					<p>поголовья КРС</p>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<div class="footer-content">
+				<div class="contact-info">
+					<p>231705, Республика Беларусь</p>
+					<p>Гродненская область, Гродненский район</p>
+					<p>агрогородок Квасовка</p>
+					<p>Тел: +375 (152) 47-66-40</p>
+				</div>
+			</div>
+			<div class="copyright">
+				<p>© Производственный кооператив имени В.И.КРЕМКО</p>
+			</div>
+		</footer>
+		<script src="../js/events.js" defer></script>
+		<script>
+			// Загрузка данных из product.json
+			fetch('../path/to/product.json')
+				.then(response => response.json())
+				.then(products => {
+					const productsGrid = document.querySelector('.products-grid')
+					products.forEach(product => {
+						const productCard = document.createElement('div')
+						productCard.classList.add('product-card')
+						productCard.innerHTML = `
+							<img src="${product.image}" alt="${product.name}" class="product-image" />
+							<div class="product-info">
+								<h3>${product.name}</h3>
+								<p>${product.description}</p>
+							</div>
+						`
+						productsGrid.appendChild(productCard)
+					})
+				})
+				.catch(error => console.error('Ошибка загрузки данных:', error))
+		</script>
+	</body>
+</html>

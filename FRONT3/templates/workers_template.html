@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Статус работников - ПК имени В.И.Кремко</title>
+		<link rel="stylesheet" href="../css/home.css" />
+		<link rel="stylesheet" href="../css/workers.css" />
+	</head>
+	<body>
+		<header>
+			<nav class="navbar">
+				<a href="home.php" class="logo">Dispatcher Kremko</a>
+				<div class="nav-links">
+					<a href="workers.php">Статус работников</a>
+					<a href="add_task.php">Добавить задачу</a>
+					<a href="admin.php">Админ панель</a>
+					<span class="user-email"
+						><?php echo htmlspecialchars($user['email']); ?></span
+					>
+					<a href="logout.php" class="logout-btn">Выйти</a>
+				</div>
+			</nav>
+		</header>
+		<main class="workers-container">
+			<h1>Статус работников</h1>
+			<div class="workers-list">
+				<?php foreach ($tasks as $task): ?>
+				<div class="worker-task-item">
+					<div class="worker-info">
+						<h3>
+							Исполнитель:
+							<?php echo htmlspecialchars($task['executor_name'] . ' ' . $task['executor_surname']); ?>
+						</h3>
+						<p class="task-title">
+							Задача:
+							<?php echo htmlspecialchars($task['title']); ?>
+						</p>
+					</div>
+					<div class="task-status">
+						<span
+							class="status-badge status-<?php echo strtolower($task['status_name']); ?>"
+						>
+							<?php echo htmlspecialchars($task['status_name']); ?>
+						</span>
+					</div>
+				</div>
+				<?php endforeach; ?>
+				<?php if (empty($tasks)): ?>
+				<p class="no-tasks">Нет активных задач</p>
+				<?php endif; ?>
+			</div>
+		</main>
+		<footer>
+			<div class="footer-content">
+				<div class="contact-info">
+					<p>231705, Республика Беларусь</p>
+					<p>Гродненская область, Гродненский район</p>
+					<p>агрогородок Квасовка</p>
+					<p>Тел: +375 (152) 47-66-40</p>
+				</div>
+			</div>
+			<div class="copyright">
+				<p>© Производственный кооператив имени В.И.КРЕМКО</p>
+			</div>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Login</title>
+		<link rel="stylesheet" href="../css/login_register.css" />
+		<link
+			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div class="wrapper">
+			<form method="post" action="../php/index.php">
+				<h1>Вход</h1>
+				<div class="input-box">
+					<input
+						type="email"
+						name="email"
+						placeholder="Электронная почта"
+						required
+					/>
+					<i class="bx bx-user"></i>
+				</div>
+				<div class="input-box">
+					<input
+						type="password"
+						name="password"
+						placeholder="Пароль"
+						required
+					/>
+					<i class="bx bxs-lock-alt"></i>
+				</div>
+				<div class="remember">
+					<label for=""><input type="checkbox" />Запомнить меня</label>
+					<a href="#">Forgot password?</a>
+				</div>
+				<!-- Блок для сообщений об ошибках -->
+				<div id="errorMessage" style="color: red; text-align: center">
+					{{message}}
+				</div>
+				<button type="submit" class="btn">Войти</button>
+				<div class="register-link">
+					<p>
+						Нет аккаунта?
+						<a href="../php/register.php">Зарегистрироваться</a>
+					</p>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

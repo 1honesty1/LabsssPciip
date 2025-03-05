@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Регистрация</title>
+		<link rel="stylesheet" href="../css/login_register.css" />
+		<link
+			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div class="wrapper">
+			<form method="post" action="../php/register.php" id="registerForm">
+				<h1>Регистрация</h1>
+				<div id="errorMessage" style="color: red; text-align: center"></div>
+				<div class="input-box">
+					<input type="text" name="name" placeholder="Ваше имя" required />
+					<i class="bx bx-user"></i>
+				</div>
+				<div class="input-box">
+					<input
+						type="text"
+						name="surname"
+						placeholder="Ваша фамилия"
+						required
+					/>
+					<i class="bx bx-user"></i>
+				</div>
+				<div class="input-box">
+					<input
+						type="email"
+						name="email"
+						placeholder="Электронная почта"
+						required
+						id="email"
+					/>
+					<i class="bx bx-envelope"></i>
+				</div>
+				<div class="input-box">
+					<input
+						type="password"
+						name="password"
+						placeholder="Пароль"
+						required
+						id="password"
+						oninput="checkPasswords()"
+					/>
+					<i class="bx bxs-lock-alt"></i>
+				</div>
+				<div class="input-box">
+					<input
+						type="password"
+						name="password_confirm"
+						placeholder="Подтвердите пароль"
+						required
+						id="password_confirm"
+						oninput="checkPasswords()"
+					/>
+					<i class="bx bxs-lock-alt"></i>
+				</div>
+				<div class="role">
+					<select name="role">
+						<option value="dispatcher">Диспетчер</option>
+						<option value="executor">Исполнитель</option>
+					</select>
+				</div>
+				<div id="errorMessage" style="color: red; text-align: center">
+					{{message}}
+				</div>
+				<button type="submit" class="btn">Зарегистрироваться</button>
+				<div class="register-link">
+					<p>
+						Уже есть аккаунт?
+						<a href="../php/index.php">Войти</a>
+					</p>
+				</div>
+			</form>
+		</div>
+	</body>
+	<script src="/js/main.js"></script>
+</html>

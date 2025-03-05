@@ -1,0 +1,72 @@
+[
+	{
+		"id": 1,
+		"name": "Смартфон",
+		"price": 299.99,
+		"description": "Современный смартфон с большим экраном и отличной камерой.",
+		"image": "images/smartphone.jpg"
+	},
+	{
+		"id": 2,
+		"name": "Ноутбук",
+		"price": 799.99,
+		"description": "Мощный ноутбук для работы и игр.",
+		"image": "images/laptop.jpg"
+	},
+	{
+		"id": 3,
+		"name": "Наушники",
+		"price": 49.99,
+		"description": "Беспроводные наушники с хорошим звучанием.",
+		"image": "images/headphones.jpg"
+	},
+	{
+		"id": 4,
+		"name": "Клавиатура",
+		"price": 29.99,
+		"description": "Игровая клавиатура с подсветкой.",
+		"image": "images/keyboard.jpg"
+	},
+	{
+		"id": 5,
+		"name": "Мышь",
+		"price": 19.99,
+		"description": "Эргономичная мышь для комфортной работы.",
+		"image": "images/mouse.jpg"
+	},
+	{
+		"id": 6,
+		"name": "Монитор",
+		"price": 199.99,
+		"description": "HD монитор с хорошей цветопередачей.",
+		"image": "images/monitor.jpg"
+	},
+	{
+		"id": 7,
+		"name": "Планшет",
+		"price": 199.99,
+		"description": "Легкий и мощный планшет для учебы и развлечений.",
+		"image": "images/tablet.jpg"
+	},
+	{
+		"id": 8,
+		"name": "Веб-камера",
+		"price": 49.99,
+		"description": "HD веб-камера для видеозвонков.",
+		"image": "images/webcam.jpg"
+	},
+	{
+		"id": 9,
+		"name": "Флешка 64GB",
+		"price": 12.99,
+		"description": "Компактная флешка для хранения данных.",
+		"image": "images/flashdrive.jpg"
+	},
+	{
+		"id": 10,
+		"name": "Портативный зарядное устройство",
+		"price": 29.99,
+		"description": "Зарядное устройство для смартфонов и планшетов.",
+		"image": "images/powerbank.jpg"
+	}
+]
